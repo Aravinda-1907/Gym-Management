@@ -17,12 +17,18 @@ app.use(
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://gym-management-rose.vercel.app"
+    ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// ✅ Handle preflight requests
+app.options("*", cors());
 
 // Rate limiting
 const limiter = rateLimit({
