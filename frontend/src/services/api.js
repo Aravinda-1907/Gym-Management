@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://gym-management-backend.onrender.com",
+  baseURL: import.meta.env.VITE_API_URL || "https://gym-management-z3xc.onrender.com",
   headers: {
     "Content-Type": "application/json"
   },
